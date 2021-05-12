@@ -54,6 +54,15 @@ describe("dhd: damped harmonic duration", () => {
         initialVelocity: 100
       })
     ).toEqual(3961.395021014451);
+    expect(
+      dhd({
+        mass: 100,
+        stiffness: 2100,
+        damping: 1000,
+        initialDisplacement: 200,
+        initialVelocity: 100
+      })
+    ).toEqual(3516.666666666657);
   });
 });
 

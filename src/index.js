@@ -90,20 +90,23 @@ const dhd = ({
     return ((-2 * m * Math.log(precision / x0)) / b) * 1000;
   }
 
+  const computeDHM = dhm(
+    {
+      mass,
+      stiffness,
+      damping,
+      initialDisplacement,
+      initialVelocity,
+      precision
+    },
+    time
+  );
+
   let time = 0;
   while (true) {
     time += 100 / 6;
-    const { displacement, velocity } = dhm(
-      {
-        mass,
-        stiffness,
-        damping,
-        initialDisplacement,
-        initialVelocity,
-        precision
-      },
-      time
-    );
+
+    const { displacement, velocity } = computeDHM(time);
     if (displacement === 0 && velocity === 0) break;
   }
 
