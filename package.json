@@ -1,6 +1,6 @@
 {
   "name": "indayog",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Oscillation as a function of time",
   "homepage": "https://github.com/cedmandocdoc/indayog",
   "main": "dist/indayog.cjs.js",
